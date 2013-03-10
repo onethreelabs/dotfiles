@@ -1,0 +1,77 @@
+"turn on pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
+"enable filetypes
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
+"window size
+if has("gui_running")
+   " GUI is running or is about to start.
+   " Maximize gvim window.
+   set lines=55 columns=200
+endif
+
+"color scheme
+:colorscheme deveiate
+
+"Forget compatibility with Vi. Who cars.
+set nocompatible
+
+"Write the old file out when switching between files
+set autowrite
+
+"Display current cursor position in lower right corner
+set ruler
+
+"Switch between buffers without saving
+set hidden
+
+"Tab stuff
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+"Show command in bottom right of screen
+set showcmd
+
+"Show line numbers
+set number
+
+"Indenting stuff
+set smartindent
+set autoindent
+
+"always show the status line
+set laststatus=2
+
+"incremental searching
+set incsearch
+
+"highlight searching
+set hlsearch
+
+"Hide MacVim toolbar
+set go-=T
+
+"Enable code folding
+set foldenable
+nnoremap <leader>ft Vatzf
+
+"Backup settings
+set backupdir=~/tmp/vim/backup// " backups
+set directory=~/tmp/vim/swap// " swap files
+set backup " enable backup
+
+"show matching brackets
+set showmatch
+
+"NERDTree settings
+map <space>n :NERDTree<cr>
+
+"surpress ruby warning for LustyExplorer
+let g:LustyJugglerSuppressRubyWarning = 1

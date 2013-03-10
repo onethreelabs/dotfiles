@@ -1,0 +1,27 @@
+#!/bin/sh
+export LANG=en_US.UTF-8
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=/usr/local/share/python:/usr/local/bin:$PATH # modify path to make homebrew python happy
+
+# find where the .zshrc file is linked to
+SOURCE="$HOME/.zshrc"
+while [ -h "$SOURCE" ] ;
+do 
+	SOURCE="$(readlink "$SOURCE")"; 
+done
+ZSH_DOTFILES="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# add all .fn files to fpath
+for fn_dir ($ZSH_DOTFILES/*/) do 
+	fpath=($fn_dir $fpath)
+done
+
+# source every .zsh file in this repo
+for config_file ($ZSH_DOTFILES/**/*.zsh) do 
+	source $config_file
+done
+
+# initialize autocomplete
+autoload -U compinit
+compinit -i
