@@ -70,8 +70,5 @@ set backup " enable backup
 "show matching brackets
 set showmatch
 
-"NERDTree settings
-map <space>n :NERDTree<cr>
-
 "surpress ruby warning for LustyExplorer
 let g:LustyJugglerSuppressRubyWarning = 1
