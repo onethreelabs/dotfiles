@@ -1,2 +1,12 @@
 #!/bin/sh
-ln -s $DOTFILES_HOME/zsh/zshrc ~/.zshrc
+if [ -e ~/.zshrc.dotfiles.backup ]
+then
+	echo "git backup exists"
+else
+	cp ~/.zshrc ~/.zshrc.dotfiles.backup
+fi
+
+rm ~/.zshrc
+cp ~/.zshrc.dotfiles.backup ~/.zshrc
+
+cat $DOTFILES_HOME/zsh/zshrc.partial >> ~/.zshrc
