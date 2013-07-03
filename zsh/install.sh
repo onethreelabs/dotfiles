@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ -e ~/.zshrc.dotfiles.backup ]
 then
-	echo "git backup exists"
+	echo "zshrc backup exists"
 else
 	cp ~/.zshrc ~/.zshrc.dotfiles.backup
 fi
