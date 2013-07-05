@@ -72,3 +72,7 @@ set showmatch
 
 "surpress ruby warning for LustyExplorer
 let g:LustyJugglerSuppressRubyWarning = 1
+
+"NERDTree mapping"
+map <C-n> :NERDTreeToggle<CR>
+
