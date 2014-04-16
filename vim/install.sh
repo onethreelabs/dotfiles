@@ -1,4 +1,6 @@
 #!/bin/sh
+rm ~/.vim
+rm ~/.vimrc
 ln -s $DOTFILES_HOME/vim ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
