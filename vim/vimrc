@@ -76,3 +76,5 @@ let g:LustyJugglerSuppressRubyWarning = 1
 "NERDTree mapping"
 map <C-n> :NERDTreeToggle<CR>
 
+"Set the search to use fzf"
+set rtp+=~/.fzf
